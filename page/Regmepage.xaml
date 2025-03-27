@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:community="clr-namespace:CommunityToolkit.Maui;assembly=CommunityToolkit.Maui"
+             x:Class="MauiApp1.page.Regmepage"
+             Shell.NavBarIsVisible="False"
+             Title="Regmepage">
+    <Grid>
+        <!-- วางภาพด้านหลัง -->
+        <Image Source="ppp.jpg"
+               Aspect="AspectFill"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"/>
+
+        <!-- StackLayout สำหรับการจัดวางหลักสูตรต่างๆ ตรงกลาง -->
+        <StackLayout VerticalOptions="StartAndExpand"
+                     HorizontalOptions="FillAndExpand"
+                     Padding="20">
+            <!-- Grid layout for two ListViews side by side -->
+            <Grid>
+                <!-- Define two columns: one for the left and one for the right -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Left ListView for "หลักสูตรภาคเรียนปัจจุบัน" with background color -->
+                <StackLayout Grid.Column="0"
+                             BackgroundColor="#FF3E2B17"
+                             Padding="10">
+                    <Label Text="หลักสูตรภาคเรียนปัจจุบัน"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start"/>
+                    <ListView ItemsSource="{Binding RegisteredCourses}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding CourseName}"
+                                          Detail="{Binding Semester}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+
+                <!-- Right ListView for "หลักสูตรที่ลงทะเบียน" with background color and Withdraw button -->
+                <StackLayout Grid.Column="1"
+                             BackgroundColor="#FFDBA349"
+                             Padding="10">
+                    <Label Text="หลักสูตรที่ลงทะเบียน"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start"/>
+                    <ListView ItemsSource="{Binding RegisteredCourses}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Padding="10"
+                                          ColumnDefinitions="*, Auto">
+                                        <!-- Left side for course name and semester -->
+                                        <StackLayout Grid.Column="0"
+                                                     Orientation="Vertical"
+                                                     HorizontalOptions="Start"
+                                                     VerticalOptions="CenterAndExpand">
+                                            <Label Text="{Binding CourseName}"
+                                                   FontAttributes="Bold"
+                                                   FontSize="16"
+                                                   TextColor="Black"/>
+                                            <Label Text="{Binding Semester}"
+                                                   FontSize="14"
+                                                   TextColor="Gray"/>
+                                        </StackLayout>
+
+                                        <!-- Right side for Withdraw button -->
+                                        <StackLayout Grid.Column="1"
+                                                     VerticalOptions="Center"
+                                                     HorizontalOptions="End">
+                                            <Button Text="ถอนวิชา"
+                                                    Command="{Binding WithdrawCourseCommand}"
+                                                    CommandParameter="{Binding .}"
+                                                    HorizontalOptions="End"
+                                                    VerticalOptions="Center"
+                                                    BackgroundColor="Red"
+                                                    TextColor="White"
+                                                    Clicked="OnWithdrawCourseClicked"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+
+
+            </Grid>
+        </StackLayout>
+
+
+        <!-- Section สำหรับ "หลักสูตรภาคเรียนก่อนหน้า" อยู่ด้านล่าง -->
+        <StackLayout VerticalOptions="EndAndExpand"
+                     HorizontalOptions="Center"
+                     Padding="20">
+            <Label Text="เลือกเทอมที่ต้องการดูข้อมูล"
+                   FontSize="18"
+                   FontAttributes="Bold"/>
+
+            <!-- Picker สำหรับเลือกเทอม -->
+            <Picker SelectedItem="{Binding SelectedTerm}"
+                    Title="เลือกเทอม">
+                <Picker.Items>
+                    <x:String>เทอมที่ 1</x:String>
+                    <x:String>เทอมที่ 2</x:String>
+                    <x:String>เทอมที่ 3</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="หลักสูตรภาคเรียนก่อนหน้า"
+                   FontSize="18"
+                   FontAttributes="Bold"/>
+
+            <!-- ListView ที่แสดงข้อมูลตามเทอมที่เลือก -->
+            <ListView ItemsSource="{Binding FilteredPreviousTermCourses}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding TermLabel}"
+                                       FontAttributes="Bold"
+                                       FontSize="16"
+                                       TextColor="Black"/>
+
+                                <StackLayout Padding="10,0,0,0">
+                                    <Label Text="{Binding Courses[0]}"
+                                           TextColor="Blue"/>
+                                    <Label Text="{Binding Courses[1]}"
+                                           TextColor="Green"/>
+                                    <Label Text="{Binding Courses[2]}"
+                                           TextColor="Red"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

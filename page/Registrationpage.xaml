@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:community="clr-namespace:CommunityToolkit.Maui;assembly=CommunityToolkit.Maui"
+             x:Class="MauiApp1.page.Registrationpage"
+             Shell.NavBarIsVisible="False"
+             Title="Registrationpage">
+        <Grid>
+                <Image Source="ppp.jpg"
+                       Aspect="AspectFill"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="FillAndExpand">
+
+                </Image>
+                <ScrollView>
+                        <StackLayout>
+                                <!-- SearchBar at the top -->
+                                <SearchBar x:Name="CourseSearchBar"
+                                           Placeholder="Search by Course Name or ID"
+                                           PlaceholderColor="#FF080808"
+                                           TextChanged="OnSearchTextChanged"
+                                           Margin="10"
+                                           TextColor="Black"/>
+
+                                <!-- CollectionView below -->
+                                <ScrollView>
+                                        <CollectionView ItemsSource="{Binding FilteredCourses}">
+                                                <CollectionView.ItemTemplate>
+                                                        <DataTemplate>
+                                                                <Frame BorderColor="Black"
+                                                                       CornerRadius="10"
+                                                                       BackgroundColor="Transparent"
+                                                                       Padding="10"
+                                                                       Margin="0,5">
+                                                                        <StackLayout Padding="10">
+                                                                                <Label Text="{Binding CourseId, StringFormat='Course ID: {0}'}"
+                                                                                       FontSize="16"
+                                                                                       FontAttributes="Bold"/>
+                                                                                <Label Text="{Binding CourseName}"
+                                                                                       FontSize="16"
+                                                                                       FontAttributes="Bold"/>
+                                                                                <Label Text="{Binding CourseDescription}"
+                                                                                       FontSize="14"/>
+                                                                                <Label Text="{Binding CreditHours, StringFormat='Credits: {0}'}"
+                                                                                       FontSize="14"/>
+                                                                                <Button Text="Add Course"
+                                                                                        BackgroundColor="#FF67A236"
+                                                                                        TextColor="White"
+                                                                                        Clicked="OnAddCourseClicked"
+                                                                                        CommandParameter="{Binding CourseId}"/>
+                                                                        </StackLayout>
+                                                                </Frame>
+                                                        </DataTemplate>
+                                                </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                </ScrollView>
+
+                                <!-- ถ้าไม่มีการค้นหา -->
+                                <ScrollView>
+                                        <CollectionView ItemsSource="{Binding Courses}">
+                                                <CollectionView.ItemTemplate>
+                                                        <DataTemplate>
+                                                                <Frame BorderColor="Black"
+                                                                       CornerRadius="10"
+                                                                       BackgroundColor="Transparent"
+                                                                       Padding="10"
+                                                                       Margin="0,5">
+                                                                        <StackLayout Padding="10">
+                                                                                <Label Text="{Binding CourseId, StringFormat='รหัสวิชา: {0}'}"
+                                                                                       FontSize="16"
+                                                                                       FontAttributes="Bold"/>
+                                                                                <Label Text="{Binding CourseName}"
+                                                                                       FontSize="16"
+                                                                                       FontAttributes="Bold"/>
+                                                                                <Label Text="{Binding CourseDescription}"
+                                                                                       FontSize="14"/>
+                                                                                <Label Text="{Binding CreditHours, StringFormat='หน่วยกิต: {0}'}"
+                                                                                       FontSize="14"/>
+                                                                                <Button Text="Add Course"
+                                                                                        BackgroundColor="#FF67A236"
+                                                                                        TextColor="White"
+                                                                                        Clicked="OnAddCourseClicked"
+                                                                                        CommandParameter="{Binding CourseId}"/>
+                                                                        </StackLayout>
+                                                                </Frame>
+                                                        </DataTemplate>
+                                                </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                </ScrollView>
+                        </StackLayout>
+                </ScrollView>
+        </Grid>
+</ContentPage>

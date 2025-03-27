@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:community="clr-namespace:CommunityToolkit.Maui;assembly=CommunityToolkit.Maui"
+             x:Class="MauiApp1.page.Loginpage"
+             Shell.NavBarIsVisible="False"
+             Title="Loginpage">
+    <Grid>
+        <Image Source="ppp.jpg"
+               Aspect="AspectFill">
+
+        </Image>
+        <Image Source="pppp.png"
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               WidthRequest="800"
+               HeightRequest="800"
+               Margin="-200,-300,0,0"/>
+
+        <VerticalStackLayout VerticalOptions="Center">
+            <Label
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+
+            <Frame BackgroundColor="Transparent"
+                   HasShadow="True"
+                   Padding="20"
+                   WidthRequest="350"
+                   BorderColor="Gray"
+                   CornerRadius="10"
+                   Opacity="0.9">
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Image Source="icons8_login.png"
+                           WidthRequest="55"
+                           Margin="0,10"></Image>
+
+                    <Label Text="Login"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="Black"/>
+                    <!-- login -->
+                    <Label Text="Email"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start"
+                           TextColor="Black"
+                           Padding="10"
+                           Margin="-10,0"/>
+                    <Border>
+                        <Entry
+                            Text="{Binding Username}"
+                            FontSize="20"
+                            WidthRequest="290"
+                            HorizontalTextAlignment="Center"
+                            TextColor="Black"></Entry>
+                    </Border>
+                    <!-- password -->
+                    <Label Text="Password"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Start"
+                           TextColor="Black"
+                           Padding="10"
+                           Margin="-10,0"/>
+                    <Border>
+                        <Entry
+                            Text="{Binding Password}"
+                            FontSize="20"
+                            WidthRequest="290"
+                            IsPassword="True"
+                            HorizontalTextAlignment="Center"
+                            TextColor="Black"></Entry>
+                    </Border>
+
+                    <Button Text="Login"
+                            Command="{Binding LoginCommand}"
+                            Margin="0,35"
+                            FontSize="20"
+                            HeightRequest="60"
+                            BackgroundColor="#FF461D00"
+                            TextColor="White"></Button>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Register"
+                               TextColor="Black"
+                               FontSize="18"
+                               Margin="20,0">
+                            <Label.GestureRecognizers>
+
+                            </Label.GestureRecognizers>
+                        </Label>
+
+
+                        <Label Text="Forget Password?"
+                               TextColor="Black"
+                               FontSize="18"
+                               Margin="50,0">
+                            <Label.GestureRecognizers>
+
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <!-- <Button Text="Register"
+                                TextColor="Black"
+                                FontSize="18"
+                                Margin="20,0"
+                                BackgroundColor="Transparent"/>
+                        <Button Text="Forget Password?"
+                                TextColor="Black"
+                                FontSize="18"
+                                Margin="0,0"
+                                BackgroundColor="Transparent"/> -->
+                    </StackLayout>
+
+
+
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label
+                HorizontalOptions="Center"
+                Text="Copyrigth © 2024. Cross Platform App. PFSR."
+                TextColor="#FF252525"
+                FontSize="18"
+                Margin="20,0"
+                Padding="20">
+
+            </Label>
+
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

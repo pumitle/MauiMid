@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:community="clr-namespace:CommunityToolkit.Maui;assembly=CommunityToolkit.Maui"
+             x:Class="MauiApp1.page.Homepage"
+             Shell.NavBarIsVisible="False"
+             Title="Homepage">
+       <Grid>
+              <Image Source="ppp.jpg"
+                     Aspect="AspectFill"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand">
+
+              </Image>
+
+              <!-- เอฟเฟกต์กระจก (โปร่งแสง) -->
+              <Frame BackgroundColor="#FF311F00"
+                     Opacity="0.5"
+                     CornerRadius="20"
+                     Padding="20"
+                     WidthRequest="350"
+                     HeightRequest="380"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Start"
+                     Margin="0,20,0,0">
+              </Frame>
+              <Image Source="logo.png"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Start"
+                     WidthRequest="500"
+                     HeightRequest="500"
+                     Margin="0,-170,0,0"/>
+              <!-- ข้อมูลผู้ใช้ -->
+              <StackLayout VerticalOptions="Start"
+                           HorizontalOptions="Center"
+                           Margin="0,110,0,0">
+                     <!-- รูปโปรไฟล์ (binding กับรูปโปรไฟล์ของผู้ใช้) -->
+                     <Frame BorderColor="Gray"
+                            BackgroundColor="Transparent"
+                            CornerRadius="50"
+                            WidthRequest="100"
+                            HeightRequest="100"
+                            Padding="0"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                            <Image Source="{Binding User.ProfileImage}"
+                                   Aspect="AspectFill"
+                                   WidthRequest="100"
+                                   HeightRequest="100"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                     </Frame>
+
+                     <!-- ชื่อ -->
+                     <Label Text="{Binding User.Name}"
+                            FontSize="24"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Margin="0,10,0,0"
+                            FontFamily="Helvetica"/>
+
+                     <!-- รหัสนิสิต -->
+                     <Label Text="{Binding User.Profile.StudentId, StringFormat='รหัสนิสิต {0}'}"
+                            FontSize="18"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            FontFamily="Helvetica"/>
+
+                     <!--อีเมล-->
+                     <Label Text="{Binding User.Email, StringFormat='อีเมล {0}'}"
+                            FontSize="18"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            FontFamily="Helvetica"/>
+
+                     <!-- คณะ -->
+                     <Label Text="{Binding User.Profile.Faculty, StringFormat='คณะ {0}'}"
+                            FontSize="18"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            FontFamily="Helvetica"/>
+
+                     <!-- สาขา -->
+                     <Label Text="{Binding User.Profile.Department, StringFormat='สาขา {0}'}"
+                            FontSize="18"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            FontFamily="Helvetica"/>
+              </StackLayout>
+
+              <!-- ปุ่ม 1: ข้อมูลการลงทะเบียน -->
+              <Button Text="ข้อมูลการลงทะเบียน"
+                      FontSize="15"
+                      HorizontalOptions="Center"
+                      VerticalOptions="End"
+                      WidthRequest="150"
+                      HeightRequest="150"
+                      CornerRadius="50"
+                      BackgroundColor="#FF934D01"
+                      TextColor="White"
+                      Margin="-200,0,0,50"
+                      Clicked="OnrButtonClicked"/>
+
+              <!-- ปุ่ม 2: ลงทะเบียน -->
+              <Button Text="ลงทะเบียน"
+                      FontSize="15"
+                      HorizontalOptions="Center"
+                      VerticalOptions="End"
+                      WidthRequest="150"
+                      HeightRequest="150"
+                      CornerRadius="50"
+                      BackgroundColor="#FF3C2600"
+                      TextColor="White"
+                      Margin="200,0,0,50"
+                      Clicked="OnRegisterButtonClicked"/>
+
+              <ImageButton Source="logout.png"
+                           HorizontalOptions="End"
+                           VerticalOptions="Start"
+                           Margin="0,20,20,0"
+                           WidthRequest="40"
+                           HeightRequest="40"
+                           BackgroundColor="Transparent"
+                           Clicked="OnLogoutButtonClicked"/>
+
+       </Grid>
+</ContentPage> 

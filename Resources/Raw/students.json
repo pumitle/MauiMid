@@ -1,0 +1,134 @@
+{
+    "students": [
+      {
+        "id": 1,
+        "email": "dfn31tv@gmail.com",
+        "password": "password123",
+        "name": "ภูมิภัทร์ นาดี",
+        "profile_image": "https://i.pinimg.com/736x/ef/4c/ff/ef4cffcd205da441548a1d966770f80b.jpg",
+        "profile": {
+          "student_id": "65011212026",
+          "faculty": "วิทยาการสารสนเทศ",
+          "department": "วิทยาการคอมพิวเตอร์"
+        },
+        "current_term_courses": [
+          "Calculus I",
+          "Introduction to Computer Science",
+          "English Literature"
+        ],
+        "previous_term_courses": [
+          ["คณิตศาสตร์ 1", "ฟิสิกส์ 1", "การเขียนโปรแกรม 1"],
+          ["คณิตศาสตร์ 2", "ฟิสิกส์ 2", "การเขียนโปรแกรม 2"],
+          ["คณิตศาสตร์ 3", "ฟิสิกส์ 3", "การเขียนโปรแกรม 3"]
+        ],
+        "registeredCourses": [
+          {
+            "courseId": "CS101",
+            "courseName": "Introduction to Computer Science",
+            "semester": "Fall 2025"
+          },
+          {
+            "courseId": "MATH202",
+            "courseName": "Calculus I",
+            "semester": "Spring 2025"
+          },
+          {
+            "courseId": "ENG301",
+            "courseName": "English Literature",
+            "semester": "Fall 2025"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "email": "student2@example.com",
+        "password": "password456",
+        "name": "สาวิตรี รักเรียน",
+        "profile_image": "https://example.com/profile_images/65011212026.jpg",
+        "profile": {
+          "student_id": "789012",
+          "faculty": "วิทยาศาสตร์",
+          "department": "เคมี"
+        },
+        "current_term_courses": ["เคมีอินทรีย์", "ชีวเคมี", "ฟิสิกส์พื้นฐาน"],
+        "previous_term_courses": [
+          ["เคมีพื้นฐาน", "ฟิสิกส์พื้นฐาน 1", "ชีววิทยา"]
+        ]
+      }
+    ],
+    "courses": [
+    {
+      "courseId": "CS101",
+      "courseName": "Introduction to Computer Science",
+      "courseDescription": "An introductory course to the fundamentals of computer science.",
+      "creditHours": 3,
+      "department": "Computer Science",
+      "semester": "Fall 2025",
+      "availableSeats": 30
+    },
+    {
+      "courseId": "MATH202",
+      "courseName": "Calculus I",
+      "courseDescription": "A course covering the fundamentals of differential calculus.",
+      "creditHours": 4,
+      "department": "Mathematics",
+      "semester": "Spring 2025",
+      "availableSeats": 25
+    },
+    {
+      "courseId": "ENG301",
+      "courseName": "English Literature",
+      "courseDescription": "An in-depth study of classical and modern English literature.",
+      "creditHours": 3,
+      "department": "English",
+      "semester": "Fall 2025",
+      "availableSeats": 40
+    },
+    {
+      "courseId": "PHY205",
+      "courseName": "General Physics II",
+      "courseDescription": "A continuation of General Physics I, focusing on electricity and magnetism.",
+      "creditHours": 4,
+      "department": "Physics",
+      "semester": "Spring 2025",
+      "availableSeats": 20
+    },
+    {
+      "courseId": "HIS110",
+      "courseName": "World History",
+      "courseDescription": "An overview of significant events and movements in world history.",
+      "creditHours": 3,
+      "department": "History",
+      "semester": "Fall 2025",
+      "availableSeats": 35
+    },
+    {
+      "courseId": "BIO150",
+      "courseName": "Introduction to Biology",
+      "courseDescription": "An introduction to biological concepts and the diversity of life.",
+      "creditHours": 4,
+      "department": "Biology",
+      "semester": "Spring 2025",
+      "availableSeats": 28
+    },
+    {
+      "courseId": "ART210",
+      "courseName": "Modern Art and Design",
+      "courseDescription": "A study of modern art movements and design principles.",
+      "creditHours": 3,
+      "department": "Art",
+      "semester": "Fall 2025",
+      "availableSeats": 30
+    },
+    {
+      "courseId": "CSE220",
+      "courseName": "Data Structures and Algorithms",
+      "courseDescription": "An in-depth look at data structures and algorithm design.",
+      "creditHours": 3,
+      "department": "Computer Science",
+      "semester": "Spring 2025",
+      "availableSeats": 18
+    }
+  ]
+  }
+  
