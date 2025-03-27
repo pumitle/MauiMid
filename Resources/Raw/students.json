@@ -53,6 +53,23 @@
         "current_term_courses": ["เคมีอินทรีย์", "ชีวเคมี", "ฟิสิกส์พื้นฐาน"],
         "previous_term_courses": [
           ["เคมีพื้นฐาน", "ฟิสิกส์พื้นฐาน 1", "ชีววิทยา"]
+        ],
+        "registeredCourses": [
+          {
+            "courseId": "CS101",
+            "courseName": "Introduction to Computer Science",
+            "semester": "Fall 2025"
+          },
+          {
+            "courseId": "MATH202",
+            "courseName": "Calculus I",
+            "semester": "Spring 2025"
+          },
+          {
+            "courseId": "ENG301",
+            "courseName": "English Literature",
+            "semester": "Fall 2025"
+          }
         ]
       }
     ],

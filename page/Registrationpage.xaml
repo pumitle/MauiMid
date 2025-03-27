@@ -14,7 +14,7 @@
                 </Image>
                 <ScrollView>
                         <StackLayout>
-                                <!-- SearchBar at the top -->
+
                                 <SearchBar x:Name="CourseSearchBar"
                                            Placeholder="Search by Course Name or ID"
                                            PlaceholderColor="#FF080808"
@@ -22,7 +22,7 @@
                                            Margin="10"
                                            TextColor="Black"/>
 
-                                <!-- CollectionView below -->
+
                                 <ScrollView>
                                         <CollectionView ItemsSource="{Binding FilteredCourses}">
                                                 <CollectionView.ItemTemplate>
@@ -54,6 +54,7 @@
                                                 </CollectionView.ItemTemplate>
                                         </CollectionView>
                                 </ScrollView>
+
 
                                 <!-- ถ้าไม่มีการค้นหา -->
                                 <ScrollView>

@@ -487,3 +487,4 @@ D:\Work_maui\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\logo.scale-
 D:\Work_maui\MauiApp1\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo.scale-100.png
 D:\Work_maui\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\logout.scale-100.png
 D:\Work_maui\MauiApp1\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\logout.scale-100.png
+D:\Work_maui\MauiApp1\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MauiApp1.sourcelink.json

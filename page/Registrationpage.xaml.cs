@@ -18,6 +18,7 @@ public partial class Registrationpage : ContentPage
 
 		// โหลดข้อมูลคอร์สจาก JSON
 		LoadCoursesFromJsonAsync();
+		LoadMockCourses();
 	}
 
 	// ฟังก์ชันเพื่อโหลดข้อมูลคอร์สจากไฟล์ JSON  // ฟังก์ชันเพื่อโหลดข้อมูลคอร์สจากไฟล์ JSON
@@ -40,6 +41,26 @@ public partial class Registrationpage : ContentPage
 		}
 
 		return AllCourses;
+	}
+	// ฟังก์ชันเพื่อจำลองข้อมูลคอร์ส
+	private void LoadMockCourses()
+	{
+		// สร้างรายการคอร์สจำลอง
+		AllCourses = new List<Course>
+		{
+			new Course { CourseId = "CS101", CourseName = "Computer Science 101", CourseDescription = "Introduction to computer science.", CreditHours = 3 },
+			new Course { CourseId = "CS102", CourseName = "Data Structures", CourseDescription = "Learn about various data structures.", CreditHours = 4 },
+			new Course { CourseId = "CS103", CourseName = "Algorithms", CourseDescription = "Learn algorithm design and analysis.", CreditHours = 4 },
+			new Course { CourseId = "CS104", CourseName = "Database Systems", CourseDescription = "Learn about relational databases.", CreditHours = 3 },
+			new Course { CourseId = "CS105", CourseName = "Operating Systems", CourseDescription = "Introduction to operating systems.", CreditHours = 3 }
+		};
+
+		// Add all courses to the FilteredCourses ObservableCollection
+		FilteredCourses.Clear();
+		foreach (var course in AllCourses)
+		{
+			FilteredCourses.Add(course);
+		}
 	}
 
 
